@@ -1,17 +1,13 @@
-
-  <h1>Welcome to Rails Games CMS</h1>
-  <p class="lead">
-    Please Sign up or Log in!
-  </p>
+  <% if user_signed_in? %>
   <p>
-    <a href="/" class="btn btn-primary">
-      All Games
-    </a>
-    <a href="/" class="btn btn-primary">
-      Collection
-    </a>
-    <a href="/" class="btn btn-primary">
-      Something
-    </a>
+    <a href="/" class="btn btn-primary"> All Games </a>
+    <a href="/" class="btn btn-primary"> My Games</a>
+    <a href="/" class="btn btn-primary"> Something</a>
   </p>
+
+  <% else %>
+   <h1>Welcome to Rails Games CMS</h1>
+     <p class="lead">Please <%= link_to "Sign up", new_user_registration_path %>
+    or <%= link_to "Log in", new_user_session_path %> </p>
+  <% end %>
 
